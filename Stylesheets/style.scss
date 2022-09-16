@@ -1,0 +1,134 @@
+// variables
+$body-background-color: #EDE9D0;
+$header-color: #2F4858;
+$correct-color: #009600;
+$red-color: #E64722;
+$border-color: #6A0000;
+$main-background: #fdfff5;
+$font-family: Montserrat;
+$font-stylel: sans-serif;
+$height60px: 60px;
+$justify_center: center;
+
+// mixin's
+@mixin special-keys-style {
+    font-weight: 700;
+    height: $height60px;
+    width: 100px;
+    margin: 2px;
+    border: 1px solid $border-color;
+}
+// the rest of the acceptence criteria either didn't seem to apply or felt like it made code less DRY
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: $body-background-color;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 10px;
+    color: $header-color;
+} 
+
+#revealWord {
+    height: 70px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: $correct-color;
+}
+
+#gameBoard {
+    width: 350px;
+    height: 420px;
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: 50px;    
+}
+
+.letterTile {
+    border: 2px solid $red-color;
+    width: 60px;
+    height: $height60px;
+    margin: 2px;
+    color: $header-color;
+    font-size: 40px;
+    font-weight: 900;
+    display: flex;
+    justify-content: $justify_center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#keyboard {
+    height: 200px;
+
+}
+
+.key-row {
+    display: flex;
+    justify-content: $justify_center;
+    width: 100%;
+    margin: auto 8px; 
+}
+
+.key {
+    font-family: 'Montserrat', sans-serif;
+    color: $red-color;
+    &:hover {
+        color: $main-background;
+    }
+    font-size: 25px;;
+    font-weight: 700;
+    height: $height60px;
+    width: 60px;
+    margin: 2px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    background-color: $main-background;
+    &:hover {
+        color: $red-color;
+    }
+}
+
+.enter {
+    font-family: 'Montserrat', sans-serif;
+    color: $red-color;
+    font-size: 20px;;
+    @include special-keys-style;
+    border-radius: 5px;
+    background-color: $main-background;
+}
+
+.delete {
+    font-family: 'Montserrat', sans-serif;
+    color: $red-color;
+    font-size: 30px;;
+    @include special-keys-style;
+    border-radius: 5px;
+    background-color: $main-background;
+}
+
+.correctSpot {
+    background-color: $correct-color;
+    color: $main-background;
+    border-color: $body-background-color
+}
+
+.inWord {
+    background-color: #FFC300 ;
+    color: $main-background;
+    border-color: $body-background-color;
+}
+
+.notUsed {
+    background-color: $red-color;
+    color: $main-background;
+}
